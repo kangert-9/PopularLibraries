@@ -5,4 +5,7 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(AddToEndSingleStrategy::class)
-interface MainView : MvpView
+interface FirstView: MvpView {
+    fun setData(login: String, password: String)
+    fun showGreeting()
+}
