@@ -8,4 +8,5 @@ import moxy.viewstate.strategy.StateStrategyType
 interface FirstView: MvpView {
     fun setData(login: String?, password: String?)
     fun showErrorMessage()
+    fun uncorrectData()
 }

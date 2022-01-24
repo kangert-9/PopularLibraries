@@ -4,6 +4,6 @@ import io.reactivex.rxjava3.core.Observable
 
 interface UserRepository {
     fun getUsers(): Observable<List<CountersModel>>
-    fun getUserByLogin(userLogin: String): Observable<CountersModel?>
+    fun checkUser(userLogin: String, userPassword: String): Observable<CountersModel>
     fun getLogins(): Observable<String>
 }

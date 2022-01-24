@@ -45,4 +45,7 @@ class FirstFragment : MvpAppCompatFragment(), FirstView, BackButtonListener {
         Toast.makeText(requireContext(), "Введите данные", LENGTH_SHORT).show()
     }
 
+    override fun uncorrectData() {
+        Toast.makeText(requireContext(), "Данные некорректны", LENGTH_SHORT).show()
+    }
 }

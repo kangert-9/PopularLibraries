@@ -15,9 +15,16 @@ class FirstPresenter(val model: CountersModel, val router: Router, val screens: 
         if(login==null||password==null){
             viewState.showErrorMessage()
         } else{
-            model.login=login
-            model.password=password
-            openGreeting(model)
+            userRepository.getLogins()
+                .flatMap  { userRepository.checkUser(login, password) }
+                .subscribe(
+                    { result ->
+                        model.login= result.login
+                        model.password=result.password
+                        openGreeting(model)
+                    },
+                    {viewState.uncorrectData()}
+                )
         }
     }
 

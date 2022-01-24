@@ -12,7 +12,7 @@ class SecondPresenter(var model: CountersModel, val router: Router, val screens:
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        viewState.showGreeting(model.login)
+        viewState.showGreeting(model.login.toString())
     }
 
     fun backPressed(): Boolean {

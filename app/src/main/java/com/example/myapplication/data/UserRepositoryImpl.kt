@@ -16,9 +16,9 @@ class UserRepositoryImpl: UserRepository {
         return Observable.just(users)
     }
 
-    override fun getUserByLogin(userLogin: String): Observable<CountersModel?> {
+    override fun checkUser(userLogin: String, userPassword: String): Observable<CountersModel> {
         return Observable.just(users)
-            .map { it.findLast { it.login == userLogin} }
+            .map { it.findLast { it.login == userLogin && it.password==userPassword} }
     }
 
     override fun getLogins(): Observable<String> {
