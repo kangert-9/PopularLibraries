@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.navigation
 
 import android.app.Application
 import com.github.terrakok.cicerone.Cicerone

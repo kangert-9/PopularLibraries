@@ -1,5 +1,7 @@
-package com.example.myapplication
+package com.example.myapplication.second
 
+import com.example.myapplication.data.CountersModel
+import com.example.myapplication.navigation.IScreens
 import com.github.terrakok.cicerone.Router
 import moxy.InjectViewState
 import moxy.MvpPresenter

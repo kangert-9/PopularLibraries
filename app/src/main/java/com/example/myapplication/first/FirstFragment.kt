@@ -1,21 +1,26 @@
-package com.example.myapplication
+package com.example.myapplication.first
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
+import com.example.myapplication.data.CountersModel
+import com.example.myapplication.data.RepositoryFactory
 import com.example.myapplication.databinding.FragmentFirstBinding
+import com.example.myapplication.navigation.AndroidScreens
+import com.example.myapplication.navigation.App
+import com.example.myapplication.navigation.BackButtonListener
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
 
-class FirstFragment : MvpAppCompatFragment(), FirstView, BackButtonListener  {
+class FirstFragment : MvpAppCompatFragment(), FirstView, BackButtonListener {
     companion object {
         fun newInstance() = FirstFragment()
     }
     private val presenter: FirstPresenter by moxyPresenter {
-        FirstPresenter(CountersModel("",""), App.instance.router, AndroidScreens()) }
+        FirstPresenter(CountersModel("",""), App.instance.router, AndroidScreens(), RepositoryFactory.create()) }
     private var vb: FragmentFirstBinding? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?) =

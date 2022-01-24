@@ -1,11 +1,10 @@
-package com.example.myapplication
+package com.example.myapplication.second
 
 import moxy.MvpView
 import moxy.viewstate.strategy.AddToEndSingleStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(AddToEndSingleStrategy::class)
-interface FirstView: MvpView {
-    fun setData(login: String?, password: String?)
-    fun showErrorMessage()
+interface SecondView: MvpView {
+    fun showGreeting(login: String)
 }

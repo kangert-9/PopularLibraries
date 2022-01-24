@@ -2,6 +2,9 @@ package com.example.myapplication
 
 import android.os.Bundle
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.navigation.AndroidScreens
+import com.example.myapplication.navigation.App
+import com.example.myapplication.navigation.BackButtonListener
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
 import com.github.terrakok.cicerone.androidx.AppNavigator
@@ -9,8 +12,10 @@ import com.github.terrakok.cicerone.androidx.AppNavigator
 class MainActivity : MvpAppCompatActivity(), MainView {
     private val navigator = AppNavigator(this, R.id.container)
 
-    private val presenter by moxyPresenter { MainPresenter(App.instance.router,
-        AndroidScreens()) }
+    private val presenter by moxyPresenter { MainPresenter(
+        App.instance.router,
+        AndroidScreens()
+    ) }
     private var vb: ActivityMainBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

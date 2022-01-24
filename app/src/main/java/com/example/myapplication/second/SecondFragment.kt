@@ -1,11 +1,15 @@
-package com.example.myapplication
+package com.example.myapplication.second
 
 import android.os.Bundle
 import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.myapplication.data.CountersModel
 import com.example.myapplication.databinding.FragmentSecondBinding
+import com.example.myapplication.navigation.AndroidScreens
+import com.example.myapplication.navigation.App
+import com.example.myapplication.navigation.BackButtonListener
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
