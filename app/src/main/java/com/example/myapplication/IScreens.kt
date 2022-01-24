@@ -4,5 +4,5 @@ import com.github.terrakok.cicerone.Screen
 
 interface IScreens {
     fun users(): Screen
-    fun show(): Screen
+    fun show(model: CountersModel): Screen
 }

@@ -6,6 +6,6 @@ import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface FirstView: MvpView {
-    fun setData(login: String, password: String)
-    fun showGreeting()
+    fun setData(login: String?, password: String?)
+    fun showErrorMessage()
 }

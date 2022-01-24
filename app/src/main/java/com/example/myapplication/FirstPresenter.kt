@@ -8,14 +8,18 @@ import moxy.MvpPresenter
 class FirstPresenter(val model: CountersModel, val router: Router, val screens: IScreens) :
     MvpPresenter<FirstView>() {
 
-    fun saveData (login: String, password: String){
-        model.login=login
-        model.password=password
-        openGreeting()
+    fun saveData (login: String?, password: String?){
+        if(login==null||password==null){
+            viewState.showErrorMessage()
+        } else{
+            model.login=login
+            model.password=password
+            openGreeting(model)
+        }
     }
 
-    private fun openGreeting() {
-        router.replaceScreen(screens.show())
+    private fun openGreeting(model: CountersModel) {
+        router.navigateTo(screens.show(model))
     }
 
     fun backPressed(): Boolean {
